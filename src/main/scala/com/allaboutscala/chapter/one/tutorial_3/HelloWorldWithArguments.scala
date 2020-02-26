@@ -4,7 +4,9 @@ object HelloWorldWithArguments extends App {
 
   println("Hello WOrld Program with Run time Arguments!")
   println("The command line arguments are :")
-  println(args.mkString(", "))
+  println(args.mkString("; "))
+  println(args.getClass())
 
-
+  var str=Seq()
+  println(str.mkString(", "))
 }
