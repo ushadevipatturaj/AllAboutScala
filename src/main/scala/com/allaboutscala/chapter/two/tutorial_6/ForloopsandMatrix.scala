@@ -33,4 +33,6 @@ println("Step1: Printing through for loop inclusive")
   for{val1<- 0 until 2
   val2<- 0 until 2}
   {  println("Matrix["+val1,val2+"]:"+marray(val1 )(val2))}
+
+
 }
