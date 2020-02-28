@@ -14,7 +14,9 @@ else if (totalpeople ==0)
       println("No person available")
     }
   else
-    {
-      println("Donuts to buy is :"+defaultdonuts)
-    }
+    println("Donuts to buy is :"+defaultdonuts)
+
+  //inline expressions
+  val donutstobuy:Int = if(totalpeople>=10) (totalpeople*donutsperperson) else defaultdonuts
+  println("testing inline if and else statements"+donutstobuy)
 }
