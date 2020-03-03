@@ -20,5 +20,5 @@ if(couponcode =="NO CODE")
   }
   println("Step2: Functions with parameters and default parameter value")
   println(s"Total price of the donut without coupon code is ${donutpricewithcoupon("Glazed Donut",4)}")
-  println(s"Total price of the donut without coupon code is ${donutpricewithcoupon("Glazed Donut",4,"COUPON1234")}")
+  println(s"Total price of the donut with coupon code is ${donutpricewithcoupon("Glazed Donut",4,"COUPON1234")}")
 }
