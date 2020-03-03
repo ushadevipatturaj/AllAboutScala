@@ -18,7 +18,7 @@ if(couponcode =="NO CODE")
     else
   (2.5*quantity)*0.5
   }
-  println("Step2: Functions with parameters and default value")
+  println("Step2: Functions with parameters and default parameter value")
   println(s"Total price of the donut without coupon code is ${donutpricewithcoupon("Glazed Donut",4)}")
   println(s"Total price of the donut without coupon code is ${donutpricewithcoupon("Glazed Donut",4,"COUPON1234")}")
 }
