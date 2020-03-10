@@ -6,10 +6,10 @@ object TailrecursionwithTailrecAnnotation extends App {
 @annotation.tailrec
   def search (donutname :String, donuts :Array[String],index:Int):Option[Boolean]={
     if (donuts.length==index) {
-      Some(true)
+      None
     }
     else if (donuts(index)== donutname) {
-        None
+        Some(true)
     }
     else
       search(donutname,donuts,index+1)
