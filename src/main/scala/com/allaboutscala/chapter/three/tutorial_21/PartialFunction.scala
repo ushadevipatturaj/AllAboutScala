@@ -17,4 +17,11 @@ case "Glazed Donut" | "Strawberry Donut" =>"Very Tasty"
   println(s"Tastelevel for Strawberry Donut is :${verytasty("Strawberry Donut")}")
   println(s"Tastelevel for Plain Donut is :${tasty("Plain Donut")}")
   println(s"Tastelevel for Coconut Donut is :${unknowntaste("Coconut Donut")}")
+
+  println("calling the partial function using orElse Keyword")
+  val donuttaste = verytasty orElse tasty orElse unknowntaste
+  println(donuttaste("Glazed Donut"))
+  println(donuttaste("Plain Donut"))
+  println(donuttaste("Coconut Donut"))
+  println(donuttaste("Strawberry Donut"))
 }
