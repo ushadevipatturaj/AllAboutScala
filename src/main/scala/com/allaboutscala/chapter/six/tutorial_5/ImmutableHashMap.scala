@@ -8,7 +8,7 @@ object ImmutableHashMap extends App {
   val hashmap1:HashMap[String,String]=HashMap(("PD","Plain Donut"),("SD","Strawberry Donut"),("GD","Glazed Donut"))
   println(s"Printing the HashMap $hashmap1")
   println("Step2: Create/Initialize a HashMap using ->")
-  val hashmap2:HashMap[String,String]=HashMap(("PD"->"Plain Donut"),("CD","Coconut Donut"),("VD","Vanilla Donut"))
+  val hashmap2:HashMap[String,String]=HashMap(("PD"->"Plain Donut"),("CD"->"Coconut Donut"),("VD"->"Vanilla Donut"))
   println(s"Printing the Hashmap $hashmap2")
 
   println("Step3: Creating new Hashmap using + and ++")
