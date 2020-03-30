@@ -13,9 +13,13 @@ object ImmutableSet extends App {
   val set3:Set[String]=set1++set2
   println(s"Printing the elements :$set3")
 
-  println("Step4: Finding Intersection of Sets using &")
+  println("Step4: Creating a Set using - ")
+  val set5:Set[String]=set3-"Coconut Donut"
+  println(s"Printing the Elements : $set5")
+
+  println("Step5: Finding Intersection of Sets using &")
   println(set1&set2)
-  println("Step5: Finding Difference of two Sets using ")
+  println("Step6: Finding Difference of two Sets using ")
   println(set3 &~set1)
 
   println("Step5: Creating empty Set ")
