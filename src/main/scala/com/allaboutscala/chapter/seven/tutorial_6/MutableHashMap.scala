@@ -4,7 +4,7 @@ import scala.collection.mutable.HashMap
 
 object MutableHashMap extends App {
   println("Step1: Create/Initialize HashMap using Tuples")
-  val hashMap1:HashMap[String,String]=HashMap(("GD"->"Glazed Donut"),("VD"->"Vanilla Donut"),("PD"->"Plain Donut"))
+  val hashMap1:HashMap[String,String]=HashMap(("GD","Glazed Donut"),("VD","Vanilla Donut"),("PD","Plain Donut"))
   println(s"HashMap1 Keys and Values are $hashMap1")
 
   println("Step2: Create/Initialize a Mutable HashMap using tuples")
