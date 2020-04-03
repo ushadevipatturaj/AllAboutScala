@@ -7,7 +7,7 @@ object MutableMap extends App {
   println(s"Map1 Keys and Values are $map1")
 
   println("Step2: Create/Initialize a Mutable Map using tuples")
-  val map2:Map[String,String]=Map(("GD"->"Glazed Donut"),("VD"->"Vanilla Donut"),("PD"->"Plain Donut"))
+  val map2:Map[String,String]=Map(("GD","Glazed Donut"),("VD","Vanilla Donut"),("PD","Plain Donut"))
   println(s"Map2 keys and values are $map2")
   println(s"Keys are :${map1.keys}")
   println(s"Values are : ${map1.values}")
