@@ -14,6 +14,9 @@ object Functions_Aggregate extends App{
   println(s"Sum of Set3 $totalSum")
   val totalSum2 = set3.foldLeft(0)(sum) //This replaces aggregate function from 2.13.0 since aggregate is deprecated
   println(totalSum2)
+  var i=0
+  set3.foreach(x=> i+=x)
+  println(i)
 
   println("Step4: Applying Aggregate function on Set of Tuples")
   val set2:Set[(String, Int, Double)]=Set(("Glazed Donut",2,2.5),("Plain Donut",5,1.75),("Strawberry Donut",7,2.00))
