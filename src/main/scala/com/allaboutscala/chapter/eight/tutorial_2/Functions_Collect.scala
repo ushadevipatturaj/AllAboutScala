@@ -30,9 +30,4 @@ object Functions_Collect extends App {
   case path if((path.split("/"))(4)=="dbe") =>path}
   println(newpathset)
 
-//  println(pathSet)
-//  val dbeFourthSet:Set[String] = pathSet.collect{ case path if((path.split("/"))(4)=="dbe") =>path}
-//  pathSet++=newpathset
-//  println(dbeFourthSet)
-
 }
