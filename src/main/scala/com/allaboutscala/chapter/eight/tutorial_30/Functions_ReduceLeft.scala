@@ -1,4 +1,4 @@
-package com.allaboutscala.chapter.eight.tutorial_29
+package com.allaboutscala.chapter.eight.tutorial_30
 
 object Functions_ReduceLeft extends App {
   println("Step1: Creating a list")
