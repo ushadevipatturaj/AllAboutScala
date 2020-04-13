@@ -20,4 +20,5 @@ object Functions_ReduceRight extends App {
   println("Step8: Applying ReduceRightOption Function on the list")
   val listempty:List[String]=List.empty
   println(listempty.reduceRightOption(stringFormat))
+
 }
