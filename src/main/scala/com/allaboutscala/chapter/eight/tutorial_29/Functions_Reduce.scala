@@ -20,4 +20,9 @@ object Functions_Reduce extends App {
   println("Step6: Applying reduce to concat strings through value function")
   val ValueFunction:(String,String) => (String) = (first, last) => (first + " , " + last)
   println(list2.reduce(ValueFunction))
+
+  println("Step7: Applying reduceOption function if the List is empty")
+  val list3:List[String]=List.empty
+  val listOptionResult:Option[String]= list3.reduceOption((start,end) => (start+" and "+end))
+  println(listOptionResult)
 }
