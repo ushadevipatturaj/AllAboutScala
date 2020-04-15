@@ -1,11 +1,6 @@
-package com.allaboutscala.chapter.nine.tutorial_2
+package com.allaboutscala.chapter.nine.tutorial_1
 
 import scala.concurrent.{Await, Future}
-import scala.concurrent.Await._
-import scala.concurrent.duration._
-import scala.concurrent.ExecutionContext.Implicits.global
-import scala.util.{Failure, Success}
-import scala.language.postfixOps
 
 object Futures_Chaining_Futures extends App {
   println("Step1: Creating two methods with Future return type")
