@@ -1,7 +1,11 @@
 package com.allaboutscala.chapter.nine.tutorial_1
 
+import scala.concurrent.duration._
 import scala.concurrent.{Await, Future}
-
+import scala.language.postfixOps
+import scala.concurrent.Await._
+import scala.concurrent.Future
+import scala.concurrent.ExecutionContext.Implicits.global
 object Futures_Chaining_Futures extends App {
   println("Step1: Creating two methods with Future return type")
   def checkStock(donut:String) :Future[Int]=Future{
