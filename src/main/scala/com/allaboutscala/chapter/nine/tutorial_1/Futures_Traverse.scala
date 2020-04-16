@@ -17,7 +17,7 @@ object Futures_Traverse extends App {
 
   val results=Future.traverse(listCallMethod){qtys => qtys.map(qty => qty.getOrElse(0))}
   results.onComplete{
-    case Success(value) => println("The future method has been completed")
+    case Success(value) => println(s"The future method has been completed $results")
     case Failure(e) =>println(s"Failed with exception ${e.getMessage}")
   }
 
