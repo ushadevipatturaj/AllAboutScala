@@ -9,11 +9,13 @@ object Futures_Recover_RecoverWith extends App {
     if(donut=="Vanilla Donut") 10 else throw new IllegalStateException("Unknown Donut")
   }
   println("Step2: Calling the Future method without recover")
+  //Recover will return the actual return value
   checkStock("Vanilla Donut").onComplete{
     case Success(value) => println(s"Execution is successful ! $value")
     case Failure(e) => println(s"Failed to complete the processing ${e.getMessage}")
   }
   println("Step3: Calling the Future method with recover for the known Exception")
+  //Recoverwith will return the value wrapped with Future
   checkStock("Unknown Donut").recover{case msg:IllegalStateException=> 0}.
     onComplete{
     case Success(value) => println(s"Execution is successful ! $value")
