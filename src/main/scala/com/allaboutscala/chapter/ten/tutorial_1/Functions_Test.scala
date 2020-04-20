@@ -7,5 +7,6 @@ class Functions_Test {
 
       2.50*quantity
     }
+  def donuts(): Seq[String] = Seq("vanilla donut", "plain donut", "glazed donut")
 
 }
