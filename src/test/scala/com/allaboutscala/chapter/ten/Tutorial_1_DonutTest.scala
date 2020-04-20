@@ -46,3 +46,13 @@ class Tutorial_3_DonutTest extends FlatSpec with Matchers {
         donut shouldEqual  Seq("vanilla donut", "plain donut", "glazed donut")
       }
   }
+class Tutorial_6_DonutTest extends FlatSpec with Matchers{
+  "type test" should "be valid" in {
+    val donut = new Functions_Test()
+    donut shouldBe a [Functions_Test]
+    donut.donutprice(5) shouldBe a [String]
+    donut.donuts() shouldBe a [Seq[String]]
+
+
+    }
+  }
