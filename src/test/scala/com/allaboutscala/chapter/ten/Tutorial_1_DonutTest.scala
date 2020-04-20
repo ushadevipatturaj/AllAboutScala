@@ -19,10 +19,22 @@ class Tutorial_2_DonutTest extends FlatSpec with Matchers{
   }
 }
 
-class Tutorial_3_DonutTest extends FlatSpec with Matchers{
+class Tutorial_3_DonutTest extends FlatSpec with Matchers {
   "Length of donutsequence" should "match 3" in {
-    val donut =new Functions_Test()
+    val donut = new Functions_Test()
     donut.donuts().length == 3
-    donut.donuts().size shouldEqual( 3)
+    donut.donuts().size shouldEqual (3)
   }
 }
+
+  class Tutorial_4_DonutTest extends FlatSpec with Matchers{
+    "Boolean test of donutsequence" should "be valid" in {
+      val donut = new Functions_Test()
+      donut.donuts() contains ("plain donut")
+      donut.donuts() shouldNot contain("Strawberry Donut")
+      donut.donuts().contains("Strawberry Donut") == false
+      donut should not be empty
+      donut.donuts().isEmpty shouldNot be true
+
+    }
+  }
