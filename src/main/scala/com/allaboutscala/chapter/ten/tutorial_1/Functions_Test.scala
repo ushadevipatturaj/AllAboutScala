@@ -1,4 +1,6 @@
 package com.allaboutscala.chapter.ten.tutorial_1
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.Future
 
 class Functions_Test {
     def donutprice(quantity:Int):Double = {
@@ -31,5 +33,10 @@ class Functions_Test {
       ("Glazed Donut" -> 0.1)
     )
     discountPrice.getOrElse(donut,0)
+  }
+
+  def futureDonutTax(donut:String) :Future[Double] =Future{
+    Thread.sleep(1000)
+    if (donut == "Vanilla Donut") 2.50 else 3.00
   }
 }

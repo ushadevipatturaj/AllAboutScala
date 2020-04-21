@@ -1,8 +1,13 @@
 package com.allaboutscala.chapter.ten
 import com.allaboutscala.chapter.ten.tutorial_1.Functions_Test
-import org.scalatest._
+import scala.language.postfixOps
 import org.scalatest.PrivateMethodTester._
-import scala.util.control
+import org.scalatest._
+import org.scalatest.concurrent.PatienceConfiguration.Timeout
+import org.scalatest.concurrent.ScalaFutures
+import org.scalatest.time.{Millis, Seconds, Span}
+import scala.concurrent.duration._
+
 class Tutorial_1_DonutTest extends FlatSpec with Matchers{
   behavior of "Functions_Test"
 }
@@ -91,5 +96,19 @@ class Tutorial_8_PrivateTest extends FlatSpec with Matchers{
     val applydiscount = PrivateMethod[Double] ('ApplyDiscount)
     val vanilladiscountprice = donut invokePrivate applydiscount("Vanilla Donut")
     vanilladiscountprice shouldEqual(0.5)
+  }
+}
+
+class Tutorial_9_FutureTest extends FlatSpec with Matchers with ScalaFutures {
+  //implicit override val PatienceConfig =
+    //PatienceConfig (timeout(Span(5,Seconds)) , interval(Span(500,Millis)))
+    //PatienceConfig(timeout=Span(5,Seconds), interval =Span(500, Millis)  )
+    override implicit val patienceConfig = PatienceConfig(timeout = 2 seconds)
+  implicit val timeout = Timeout(patienceConfig.timeout)
+  "Future test" should "be valid" in {
+    val donut=new Functions_Test()
+    val result=donut.futureDonutTax("Vanilla Donut")
+    whenReady(result){price => price shouldEqual 2.50}
+    whenReady(result){price => price should not equal 3.00}
   }
 }
