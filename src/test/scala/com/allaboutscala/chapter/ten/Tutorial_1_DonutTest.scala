@@ -76,4 +76,8 @@ class Tutorial_7_DonutTest extends FlatSpec with Matchers{
     val donut = new Functions_Test()
     the[java.lang.IllegalStateException] thrownBy(donut.printName()) should have message("Printing Error!")
   }
+  "Only one Exception Test" should "throw a single Exception" in  {
+    val donut =new Functions_Test()
+    an[java.lang.IllegalStateException] should be thrownBy(donut.printName())
+  }
 }
