@@ -11,4 +11,25 @@ class Functions_Test {
   def printName():Unit ={
     throw new IllegalStateException("Printing Error!")
   }
+  def donutPriceWithDiscount(donut:String):Option[Double]={
+    val donutPriceList = Map(
+      ("Vanilla Donut" -> 1.5),
+      ("Plain Donut" -> 2.75),
+      ("Glazed Donut" -> 2.25)
+    )
+    val price = donutPriceList.get(donut)
+    val discountedPrice = price.map{ price => price+(1-ApplyDiscount(donut))}
+    discountedPrice
+  }
+
+
+
+  def ApplyDiscount(donut: String): Double ={
+    val discountPrice = Map(
+      ("Vanilla Donut" -> 0.5),
+      ("Plain Donut" -> 0.2),
+      ("Glazed Donut" -> 0.1)
+    )
+    discountPrice.getOrElse(donut,0)
+  }
 }

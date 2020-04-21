@@ -1,7 +1,7 @@
 package com.allaboutscala.chapter.ten
 import com.allaboutscala.chapter.ten.tutorial_1.Functions_Test
 import org.scalatest._
-
+import org.scalatest.PrivateMethodTester._
 import scala.util.control
 class Tutorial_1_DonutTest extends FlatSpec with Matchers{
   behavior of "Functions_Test"
@@ -17,7 +17,6 @@ class Tutorial_2_DonutTest extends FlatSpec with Matchers{
     Functions_Test.donutprice(quantity =2) should not be(4.00)
     Functions_Test.donutprice(2) should not equal(4)
     Functions_Test.donutprice(2) != 4.00
-
   }
 }
 
@@ -79,5 +78,18 @@ class Tutorial_7_DonutTest extends FlatSpec with Matchers{
   "Only one Exception Test" should "throw a single Exception" in  {
     val donut =new Functions_Test()
     an[java.lang.IllegalStateException] should be thrownBy(donut.printName())
+  }
+}
+
+class Tutorial_8_PrivateTest extends FlatSpec with Matchers{
+  "private test" should "be valid" in{
+    val donut = new Functions_Test()
+    val discountedPrice =donut.donutPriceWithDiscount("Vanilla Donut")
+    discountedPrice shouldNot equal(10.00)
+    discountedPrice shouldEqual(Some(2.00))
+    // testing private method
+    val applydiscount = PrivateMethod[Double] ('ApplyDiscount)
+    val vanilladiscountprice = donut invokePrivate applydiscount("Vanilla Donut")
+    vanilladiscountprice shouldEqual(0.5)
   }
 }
