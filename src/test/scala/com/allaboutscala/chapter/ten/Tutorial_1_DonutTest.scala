@@ -1,6 +1,8 @@
 package com.allaboutscala.chapter.ten
 import com.allaboutscala.chapter.ten.tutorial_1.Functions_Test
 import org.scalatest._
+
+import scala.util.control
 class Tutorial_1_DonutTest extends FlatSpec with Matchers{
   behavior of "Functions_Test"
 }
@@ -52,7 +54,26 @@ class Tutorial_6_DonutTest extends FlatSpec with Matchers{
     donut shouldBe a [Functions_Test]
     donut.donutprice(5) shouldBe a [String]
     donut.donuts() shouldBe a [Seq[String]]
-
-
-    }
   }
+  }
+
+class Tutorial_7_DonutTest extends FlatSpec with Matchers{
+  "Exception Test" should  "throw IllegalStateException" in {
+    val donut = new Functions_Test()
+    //intercede function is used to get the exception from the printname method
+    intercept[java.lang.Exception] (donut.printName())
+  }
+  "Exception thrownby Test" should  "match IllegalStateException" in {
+    val donut = new Functions_Test()
+    //intercede function is used to get the exception from the printname method
+    val exception = the [java.lang.IllegalStateException] thrownBy( donut.printName())
+
+    exception.getMessage should include("Printing Error!")
+    exception.getClass shouldEqual classOf[ java.lang.IllegalStateException]
+  }
+
+  "Exception message" should "match Printing Error!" in {
+    val donut = new Functions_Test()
+    the[java.lang.IllegalStateException] thrownBy(donut.printName()) should have message("Printing Error!")
+  }
+}
