@@ -1,4 +1,4 @@
-package com.allaboutscala.Exercises
+package com.allaboutscala.Exercises_String
 
 object Problem_5 extends App {
 

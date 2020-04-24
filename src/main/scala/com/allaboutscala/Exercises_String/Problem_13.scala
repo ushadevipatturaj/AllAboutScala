@@ -1,4 +1,4 @@
-package com.allaboutscala.Exercises
+package com.allaboutscala.Exercises_String
 
 object Problem_13 extends App {
   val tupleList:List[(String,String,Double)] = List(

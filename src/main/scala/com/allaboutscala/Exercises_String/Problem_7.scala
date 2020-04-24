@@ -1,4 +1,4 @@
-package com.allaboutscala.Exercises
+package com.allaboutscala.Exercises_String
 import scala.io.StdIn._
 object Problem_7 extends App {
   val name=readLine("Enter the Name: ")

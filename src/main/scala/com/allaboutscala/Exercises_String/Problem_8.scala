@@ -1,4 +1,4 @@
-package com.allaboutscala.Exercises
+package com.allaboutscala.Exercises_String
 
 object Problem_8 extends App {
   val str="Vanilla Donut 10 2.25"

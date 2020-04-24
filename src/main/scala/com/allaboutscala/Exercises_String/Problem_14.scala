@@ -1,4 +1,4 @@
-package com.allaboutscala.Exercises
+package com.allaboutscala.Exercises_String
 
 object Problem_14 extends App {
   val firstList=List("pencil", "pen", "sharpener")

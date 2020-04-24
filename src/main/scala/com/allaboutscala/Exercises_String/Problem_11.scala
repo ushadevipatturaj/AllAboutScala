@@ -1,4 +1,4 @@
-package com.allaboutscala.Exercises
+package com.allaboutscala.Exercises_String
 
 object Problem_11 extends App {
   val cartItems:Set[String]=Set( "Milk", "Cheese", "Donuts", "Apples", "Bananas")
