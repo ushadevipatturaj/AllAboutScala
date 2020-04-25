@@ -8,6 +8,7 @@ object Problem_3 extends App {
     val stringLiteral=num.mkString("::")
     println(s"$num as String Literals= $stringLiteral")
   }
+
   printNum(10)
   printNumFormatted(10,11,12)
 }
